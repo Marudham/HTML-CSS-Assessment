@@ -340,14 +340,14 @@ section {
         height: 120vh;
     }
     .image-container{
-        height: 60%;
-        width: 70%;
+        height: 65%;
+        width: 85%;
         padding: 10px;
         margin: auto auto;
         padding: 30px;
     }
     .image-container .column-1 img{
-        height: 35vh;
+        height: 49%;
     }
     .container-2 .content{
         width: 50%;
@@ -372,8 +372,12 @@ section {
         top: 48px;
         left: 63%;
     }
+    section{
+        height: auto;
+    }
     .container-1{
         width: 93%;
+        height: auto;
     }
     .container-1 .content{
         padding-top: 40px;
@@ -395,10 +399,12 @@ section {
     }
     .container-1 .image-holder{
        margin: 0 auto;
-       margin-top: 40px;
+       margin-top: 35px;
+       padding-bottom: 30px;
     }
     .container-1 .image-holder img{
        margin-top: 60px;
+       height: auto;
     }
     
     .container-2 .content .click-box{
@@ -407,19 +413,34 @@ section {
     }
     .container-2 .image-container{
         padding-top: 25px;
-        width: 85%;
+        width: 90%;
+        height: 60%;
     }
-    .container-2 .image-container .column-1{
-        margin-left: 10px;
+    .image-container .column-1,.image-container .column-2, .image-container img{
+        margin: 0 0;
+        padding:  0 0;
     }
+    
 }
 
 @media only screen and (max-width: 500px) {
+    header img{
+        margin-right: 25%;
+    }
+    header .toggle-menu{
+        left: 45%;
+    }
+
     .container-1 .content{
         padding-top: 35px;
         padding-left: 30px;
         width: 94%;
-        height: 40%;
+    }
+    section{
+        height: auto;
+    }
+    .container-1{
+        height: auto;
     }
     .container-1 .content h1{
         padding-bottom: 5px;
@@ -450,5 +471,37 @@ section {
     .image-container, .image-container .column-1{
         margin: auto;
         padding: 0;
+    }
+    .container-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        height: auto;
+    }
+    
+    .container-1 .content {
+        flex: 1; 
+        max-width: 900px;
+        padding: 40px;
+        padding-left: 50px;
+        box-sizing: border-box;
+        overflow: auto; 
+    }
+    
+    .image-holder img {
+        width: 100%; 
+        height: auto;
+        margin-bottom: 50px;
+    }
+    .image-container{
+        padding: 20px 20px;
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+}
+
+@media only screen and (max-height: 400px){
+    .image-container{
+        padding: 0 0;
     }
 }
