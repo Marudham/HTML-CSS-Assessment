@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="menu">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Order</a></li>
@@ -16,7 +16,19 @@
                 <li><a href="#">Restaurant</a></li>
                 <li><a href="#">Testimonials</a></li>
                 <li><a href="#">Contact Us</a></li>
-                <li><a href="#"><img src="assets/images/menu-bar.png" alt="menu bar image" /></a></li>
+                <!-- <li><a href="#"><img src="assets/images/menu-bar.png" alt="menu bar image" /></a></li> -->
+            </ul>
+        </nav>
+        <input type="checkbox" id="toggle-nav" class="toggle-nav">
+        <label for="toggle-nav" class="toggle-label"><img src="assets/images/menu-bar.png" alt="menu bar image" /></label>
+        <nav class="toggle-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Order</a></li>
+                <li><a href="#">Food</a></li>
+                <li><a href="#">Restaurant</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -33,7 +45,9 @@
                     </p>
                     <button>Click Me</button>
                 </div>
-                <img src="assets/images/pexels-robin-stickel-70497.jpg" alt="Fries and Burger on Plate image">
+                <div class="image-holder">
+                    <img src="assets/images/pexels-robin-stickel-70497.jpg" alt="Fries and Burger on Plate image">
+                </div>    
             </div>
         </section>
         <section id="section-2">

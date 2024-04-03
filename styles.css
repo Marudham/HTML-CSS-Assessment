@@ -10,6 +10,7 @@ html{
 header {
     background-color: #FF7072;
     width: 100%;
+    display: flex;
     /* position: fixed; */
 }
 
@@ -17,18 +18,20 @@ header {
     padding-top: 80px;
 } */
 
-nav{
+.menu{
     padding: 20px 0;
+    width: 85%;
 }
 
-nav ul{
+.menu ul{
     list-style: none;
     display: flex;
     justify-content: space-between;
-    margin: 0 15%;
+    margin-left: 17%;
+    margin-right: 5%;
 }
 
-nav ul li{
+.menu ul li{
     font-family: serif;
     font-size: 20px;
     font-weight: bold;
@@ -36,26 +39,89 @@ nav ul li{
     letter-spacing: 2px;
 }
 
-nav li a{
+.menu li a{
     text-decoration: none;
     color: black;
 }
 
-nav li a:hover{
+.menu li a:hover{
     opacity: 70%;
     /* color: rgba(0, 0, 0, 50%); */
 }
 
-nav ul li img{
+header img{
     position: absolute;
     width: 40px;
     height: 45px;
-    top: -48%;
+    float: right;
+    padding-top: 10px;
 }
 
 /*  */
 
+.toggle-nav {
+    display: none;
+}
 
+.toggle-label {
+    display: block;
+    cursor: pointer;
+}
+
+.toggle-menu {
+    display: none;
+    font-size: 20px;
+}
+
+.toggle-nav:checked ~ .toggle-menu{
+    display: block;
+    border: 2px solid #FF7072;
+}
+
+.toggle-nav:checked + .toggle-label img {
+    background-color: wheat;
+}
+
+.toggle-menu ul {
+    list-style: none;
+    display: block;
+    justify-content: space-between;
+    margin-left: 17%;
+    margin-right: 5%;
+}
+
+.toggle-menu ul li {
+    margin-bottom: 10px;
+}
+
+.toggle-menu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.toggle-menu ul li a:hover{
+    color: rgba(0, 0, 0, 80%);
+}
+/*  */
+
+.toggle-menu {
+    display: none;
+    font-size: 20px;
+    position: absolute;
+    top: 50px;
+    left: 76%;
+    background-color: #ff8a8c;
+    border-radius: 5px;
+    padding: 10px;
+    backdrop-filter: blur(5px); 
+    z-index: 999;
+}
+
+.toggle-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
 /*  */
 
@@ -71,11 +137,13 @@ section {
     display: flex;
 }
 
-.container-1 .content, .container-1 img{
+.container-1 .content, .container-1 .image-holder{
     width: 50%;
 }
 
 .container-1 img{
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -193,55 +261,6 @@ section {
     opacity: 80%;
 }
 
-
-@media screen and (max-width: 850px){
-    .container-1, .container-2{
-        display: block;
-    }
-    .container-1 .content{
-        padding: 5% 8%;
-        height: 230px;
-        width: 80%;
-    }
-    .container-1 h1, .container-2 h1{
-        font-size: 2.3rem;
-        letter-spacing: 5px;
-    }
-    .container-1 p{
-        margin-top: 25px;
-        font-size: 15px;
-        line-height: 22px;
-        width: 85%;
-        letter-spacing: 1px;
-    }
-
-    .container-1 img{
-        width: 95%;
-        padding: 10px;
-        height: 45%;
-        margin-left: 10px;
-    }
-    
-    .container-1 button{
-        margin-top: 25px;
-        padding: 15px 70px;
-        margin-bottom: 10px;
-    }
-    #section-2{
-        height: 120vh;
-    }
-    .image-container{
-        height: 60%;
-        width: 90%;
-        padding: 10px;
-    }
-    .container-2 .content{
-        width: 50%;
-        height: 150px;
-        margin: auto 7.5%;
-    }
-}
-
 @media only screen and (max-width: 900px){
     .image-container .column-1{
         margin-left: 7%;
@@ -252,7 +271,184 @@ section {
 }
 
 @media only screen and (max-width: 1050px){
-    nav ul{
-        margin: 0 10%;
+    .menu ul{
+        margin-left: 10%;
+        margin-right: 3%;
+    }
+    .menu{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .menu{
+        display: none;
+    }
+    header{
+        height: 60px;
+    }
+    header img{
+        right: 0;
+        margin-right: 70px;
+    }
+  
+}
+
+
+@media only screen and (max-width: 850px){
+    .toggle-menu{
+        top: 50px;
+        left: 75%;
+    }
+    .container-1, .container-2{
+        display: block;
+    }
+    .container-1 .content{
+        padding-top: 45px;
+        padding-left: 50px;
+        height: 33%;
+        max-height: 280px;
+        width: 90%;
+    }
+    .container-1 h1, .container-2 h1{
+        font-size: 2.3rem;
+        letter-spacing: 5px;
+    }
+    .container-1 p{
+        margin-top: 25px;
+        font-size: 15px;
+        line-height: 22px;
+        width: 92%;
+        letter-spacing: 1px;
+    }
+
+    .container-1 .image-holder{
+        width: 85%;
+        height: 50%;
+        margin: 0 auto;
+    }
+    
+    .container-1 .image-holder img{
+        width: 100%;
+        height: 90%;
+    }
+    
+    .container-1 button{
+        margin-top: 30px;
+    }
+    #section-2{
+        height: 120vh;
+    }
+    .image-container{
+        height: 60%;
+        width: 70%;
+        padding: 10px;
+        margin: auto auto;
+        padding: 30px;
+    }
+    .image-container .column-1 img{
+        height: 35vh;
+    }
+    .container-2 .content{
+        width: 50%;
+        height: 150px;
+        margin: 10px 19.5%;
+    }
+    menu ul li{
+        font-size: 10px;
+    }
+    header img{
+        width: 40px;
+        height: 38px;
+        padding-top: 13px;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .menu ul li{
+        display: none;
+    }
+    header .toggle-menu{
+        top: 48px;
+        left: 63%;
+    }
+    .container-1{
+        width: 93%;
+    }
+    .container-1 .content{
+        padding-top: 40px;
+        padding-left: 40px;
+        height: 150px;
+        width: 95%;
+        max-height: 250px;
+    }
+    .container-1 .content h1, .container-2 .content h1{
+        /* font-size: 1.7rem; */
+        font-size: 5vw;
+    }
+
+    .container-1 .content p, .container-2 .content p{
+        font-size: 13px;
+    }
+    .container-1 .content button{
+        margin-top: 20px;
+    }
+    .container-1 .image-holder{
+       margin: 0 auto;
+       margin-top: 40px;
+    }
+    .container-1 .image-holder img{
+       margin-top: 60px;
+    }
+    
+    .container-2 .content .click-box{
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .container-2 .image-container{
+        padding-top: 25px;
+        width: 85%;
+    }
+    .container-2 .image-container .column-1{
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container-1 .content{
+        padding-top: 35px;
+        padding-left: 30px;
+        width: 94%;
+        height: 40%;
+    }
+    .container-1 .content h1{
+        padding-bottom: 5px;
+    }
+    .container-1 .content p{
+        font-size: 13px;
+    }
+    .container-1 .content button{
+        margin-top: 20px;
+    }
+    .container-1 .image-holder{
+        width: 95%;
+        height: 45%;
+        margin: 0;
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+    .container-1 .image-holder img{
+        margin: 0;
+        margin-top: 3%;
+        max-height: 280px;
+    }
+    .container-2 .content{
+        height: 140px;
+        padding: 8px 8px;
+        width: 50%;
+    }
+    .image-container, .image-container .column-1{
+        margin: auto;
+        padding: 0;
     }
 }
