@@ -1,3 +1,1 @@
-##Hello!
-
-Live link: <a href="https://marudham.github.io/HTML-CSS-Assessment/">https://marudham.github.io/HTML-CSS-Assessment/</a>
+## Live link: <a href="https://marudham.github.io/HTML-CSS-Assessment/" target="_blank">https://marudham.github.io/HTML-CSS-Assessment/</a>
